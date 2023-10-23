@@ -7,6 +7,7 @@ import use_case.signup.SignupUserDataAccessInterface;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -83,6 +84,15 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface, 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public ArrayList<String> delete_users(){
+        ArrayList<String> all_users = new ArrayList<>();
+        accounts.forEach((username, user) -> {
+            all_users.add(user.getName());
+        });
+        accounts.clear();
+        return all_users;
     }
 
 

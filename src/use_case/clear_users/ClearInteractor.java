@@ -1,6 +1,13 @@
 package use_case.clear_users;
-
-// TODO Complete me
-
 public class ClearInteractor {
+    final ClearUserDataAccessInterface clearDataObject;
+
+    final ClearOutputBoundary clearPresenter;
+
+    public ClearInteractor(ClearUserDataAccessInterface clearDataObject, ClearOutputBoundary clearPresenter) {
+        this.clearDataObject = clearDataObject;
+        this.clearPresenter = clearPresenter;
+    }
+
+
 }
